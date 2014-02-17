@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Hupu Distributioner",
-  "description": "This extension development for JRs.",
+  "description": "Custom",
   "icons": 
   { 
     "16": "icon16.png",             
