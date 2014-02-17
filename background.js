@@ -6,6 +6,7 @@
 	var bg_plus       = '';			  //附加留言
 
 	var bg_now  	  = 0;			  //当前已处理的楼数
+	var bg_total      = 0;                    //总人数
 	var bg_self_name  = '';		      //散卡者自己的用户名
 	var bg_bank_sign  = '';		      //银行的 sign
 
@@ -28,6 +29,7 @@ chrome.extension.onConnect.addListener(function(port) {
 		bg_self_name       = '';
 		bg_bank_sign       = '';
 		bg_set             = new Array();
+		bg_total           = bg_set.length;
 
     	chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
     	    tab_notify_id = tabs[0].id;  
@@ -122,7 +124,8 @@ function notify_content(name){
     	{
     		action     : "update_one",
     		now        : bg_now,
-    		name 	   : name
+    		name 	   : name,
+    		total      : bg_total
     	}, 
     	function(response) {}
     );
