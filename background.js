@@ -6,11 +6,10 @@
 	var bg_plus       = '';			  //附加留言
 
 	var bg_now  	  = 0;			  //当前已处理的楼数
-	var bg_total      = 0;                    //总人数
-	var bg_self_name  = '';		      //散卡者自己的用户名
-	var bg_bank_sign  = '';		      //银行的 sign
-
-	var bg_set = new Array();         //待散人员
+    var bg_self_name  = '';           //散卡者自己的用户名
+    var bg_bank_sign  = '';           //银行的 sign
+    var bg_set        = new Array();  //待散人员
+	var bg_total      = 0;            //总人数
 
 /****** Global ******/
 
@@ -28,8 +27,13 @@ chrome.extension.onConnect.addListener(function(port) {
 		bg_now             = 0;
 		bg_self_name       = '';
 		bg_bank_sign       = '';
-		bg_set             = new Array();
+        bg_set             = new Array();
+		bg_set             = msg.bg_set;
 		bg_total           = bg_set.length;
+
+        for(var i=0;i<bg_total;i++){
+            bg_set[i] = $.trim(bg_set[i]);
+        }
 
     	chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
     	    tab_notify_id = tabs[0].id;  
@@ -73,8 +77,8 @@ function Distributioner(){
 	// 
 	var tmp = bg_set.pop();
 	if(typeof(tmp) != 'undefined'){
-	    do_main($(tmp).html());
-  	    setTimeout(start_ssn, 3000);
+	    do_main(tmp);
+  	    setTimeout(Distributioner, 3000);
 	}else{
 		return true;
 	}
