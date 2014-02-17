@@ -1,4 +1,5 @@
 /****** Global ******/
+	var list = '';
 
     var money = 0;       // 钱数
     var plus = '';       // 附言
@@ -28,12 +29,20 @@ $('#check').on('click',function(){
 		plus = encodeURIComponent($('#plus').val());
 	}
 
+	if($('#list').val() == ''){
+		list = '';
+		return false;
+	}else{
+		list = $('#list').val();
+		bg_set = list.split('>');
+	}
+
 	$('#check').html('检查中...');
 	$('#check').prop('disabled', true);
 
 	chrome.tabs.query({active: true}, function(tab) {
         url = tab[0].url;  // 保存主 Chrome 的 Tab 用来通知结果
-        check_Url();
+        Send_Background();
     });
     return true;
 
