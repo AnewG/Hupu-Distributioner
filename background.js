@@ -60,7 +60,7 @@ chrome.extension.onConnect.addListener(function(port) {
 		// 正则
 
     	chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
-    	    tab_notify_id = tabs[0].id;  
+    	    tab_notify_id = tabs[0].id; 
     	    get_self_name();
     	});
 	}
@@ -79,6 +79,7 @@ function get_self_name(){
 		}
 	);	
 }
+//test
 
 // 获取最大页数
 function get_max_page(){
