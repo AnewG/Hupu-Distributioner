@@ -1,5 +1,5 @@
 /****** Global ******/
-	var list = '';
+    var list = '';
 
     var money = 0;       // 钱数
     var plus = '';       // 附言
