@@ -1,14 +1,14 @@
 /****** Global ******/
 
-	var tab_notify_id = 0;		      //要通知操作结果的Chrome标签页ID
+	var tab_notify_id = 0;		  //要通知操作结果的Chrome标签页ID
 
-	var bg_money      = 50;			  //要散的钱数
-	var bg_plus       = '';			  //附加留言
+	var bg_money      = 50;		  //要散的钱数
+	var bg_plus       = '';		  //附加留言
 
-	var bg_now  	  = 0;			  //当前已处理的楼数
-    var bg_self_name  = '';           //散卡者自己的用户名
-    var bg_bank_sign  = '';           //银行的 sign
-    var bg_set        = new Array();  //待散人员
+	var bg_now  	  = 0;	          //当前已处理的楼数
+        var bg_self_name  = '';           //散卡者自己的用户名
+        var bg_bank_sign  = '';           //银行的 sign
+        var bg_set        = new Array();  //待散人员
 	var bg_total      = 0;            //总人数
 
 /****** Global ******/
@@ -106,7 +106,7 @@ function do_main(name,level){
     	    }
     	});
     }else{
-    	notify_content(); 		  // 散卡者自己，不参与散卡	    	
+    	notify_content();  // 散卡者自己，不参与散卡	    	
     }
 }
 
