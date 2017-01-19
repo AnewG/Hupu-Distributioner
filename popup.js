@@ -69,10 +69,10 @@ $('#check').on('click',function(){
 
 // 检查 URL
 function check_Url(){
-	if( (/http\:\/\/bbs\.hupu\.com\/(\d{1,})\.html/.test(url)) || (/http\:\/\/my\.hupu\.com\/(.{1,})\/note\/(\d{1,})\.html/.test(url)) ){
+	if( (/https?\:\/\/bbs\.hupu\.com\/(\d{1,})\.html/.test(url)) || (/https?\:\/\/my\.hupu\.com\/(.{1,})\/note\/(\d{1,})\.html/.test(url)) ){
 		if( (/note/.test(url)) ){
 			note = 1;   
-			(/http\:\/\/my\.hupu\.com\/(.{1,})\/note\/(\d{1,})\.html/.test(url));
+			(/https?\:\/\/my\.hupu\.com\/(.{1,})\/note\/(\d{1,})\.html/.test(url));
 			note_group_1 = RegExp.$1;
 			note_group_2 = RegExp.$2;
 		}
