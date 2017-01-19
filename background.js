@@ -86,7 +86,7 @@ function get_max_page(){
 
     if(bg_note == 0){ // 非碎碎念的获取最大页数
 
-    	(/http\:\/\/bbs\.hupu\.com\/(\d{1,})\.html/.test(bg_url));
+    	(/https?\:\/\/bbs\.hupu\.com\/(\d{1,})\.html/.test(bg_url));
 		bbs_group_1 = RegExp.$1;
 
     	var request;
@@ -131,7 +131,7 @@ function Bank(){
 // 散卡执行主体
 function Distributioner(){
 	if(bg_note){
-	    (/http\:\/\/my\.hupu\.com\/(.{1,})\/note\/(\d{1,})\.html/.test(bg_url));
+	    (/https?\:\/\/my\.hupu\.com\/(.{1,})\/note\/(\d{1,})\.html/.test(bg_url));
 		bg_note_group_1 = RegExp.$1;
 		bg_note_group_2 = RegExp.$2;
 
