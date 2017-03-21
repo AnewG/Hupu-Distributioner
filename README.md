@@ -63,11 +63,3 @@ The MIT License (MIT)
 ## 报告BUG
 
 直接虎扑上发PM给 `Anew_G.` 就好了
-
-## 捐助 donate
-
-您也可以捐助我喝杯咖啡！感谢！
-
-支付宝或微信
-
-![alipay](http://ww2.sinaimg.cn/large/7011d6cfjw1f3bk8ikzoij20740743z5.jpg) ![wechat](http://ww2.sinaimg.cn/large/7011d6cfjw1f3bkdw3bslj206z06q3z6.jpg)
