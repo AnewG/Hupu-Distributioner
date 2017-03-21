@@ -63,3 +63,7 @@ The MIT License (MIT)
 ## 报告BUG
 
 直接虎扑上发PM给 `Anew_G.` 就好了
+
+## License
+
+The MIT License (MIT)
