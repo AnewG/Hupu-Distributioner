@@ -91,7 +91,7 @@ function get_max_page(){
 
     	var request;
         request = $.ajax({
-            url: 'http://bbs.hupu.com/'+bbs_group_1+'-last.html',
+            url: 'https://bbs.hupu.com/'+bbs_group_1+'-last.html',
             type: "get"
         });
         request.done(function (response, textStatus, jqXHR){
@@ -116,7 +116,7 @@ function get_max_page(){
 function Bank(){
     var request;
     request = $.ajax({
-        url: 'http://my.hupu.com/bank.php',
+        url: 'https://my.hupu.com/bank.php',
         type: "get"
     });
     request.done(function (response, textStatus, jqXHR){
@@ -230,7 +230,7 @@ function multi_start_bbs(){
 
 		$.ajax({
 		    type: "GET"
-		    , url: 'http://bbs.hupu.com/'+bbs_group_1+'-'+bg_now_page+'.html'
+		    , url: 'https://bbs.hupu.com/'+bbs_group_1+'-'+bg_now_page+'.html'
 		    , success: function(html){ 
 		    	var tmp_arr = $(html).find('#t_main').find('div').filter(function(){ return this.id.match(/^\d{1,}$/) && !($(this).attr('style')) });
 		        if(tmp_arr.length < 1){
@@ -267,9 +267,9 @@ function multi_start_bbs(){
 	}else if(bg_now_page < bg_max_page){
 
 		if(bg_now_page == 1){  // 防跳转
-			var url = 'http://bbs.hupu.com/'+bbs_group_1+'.html';
+			var url = 'https://bbs.hupu.com/'+bbs_group_1+'.html';
 		}else{
-			var url = 'http://bbs.hupu.com/'+bbs_group_1+'-'+bg_now_page+'.html';
+			var url = 'https://bbs.hupu.com/'+bbs_group_1+'-'+bg_now_page+'.html';
 		}
 		$.ajax({
 		    type: "GET"
@@ -328,7 +328,7 @@ function do_main(name,level){
 	    	var bb = Closure(name);   // 生成闭包
         	$.ajax({
         	    type: "POST"
-        	    , url: "http://my.hupu.com/bank_act.php"
+        	    , url: "https://my.hupu.com/bank_act.php"
         	    , data: "action=virement&pwuser="+encodeURIComponent(name)+"&to_money="+bg_money+"&content_plus=%E9%80%9A%E8%BF%87%E6%95%A3%E5%8D%A1%E5%99%A8%E7%BB%99%E6%82%A8%E8%BD%AC%E8%B4%A6"+bg_money+"%E5%8D%A1%E8%B7%AF%E9%87%8C%20%20%E5%B9%B6%E8%AF%B4%EF%BC%9A%20"+bg_plus+"&sign="+bg_bank_sign  
         	    , error: bb           // 给 Ajax 失败的回调函数注册该闭包，包含失败用户名局部变量
         	    , success: function(html){
