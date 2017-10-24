@@ -95,12 +95,18 @@ function get_max_page(){
             type: "get"
         });
         request.done(function (response, textStatus, jqXHR){
+	    /*
             bg_max_page = $(response).find('#bbstopic_set').find('span').html();
             if(bg_max_page == null){
             	bg_max_page = 1;
             }else{
             	bg_max_page = parseInt(bg_max_page);
             }
+	    */
+	    (/第\s*(\d{1,})\s*页/.test(response));
+	    var pn = RegExp.$1;
+	    bg_max_page = parseInt(pn);
+	    
             Bank(); // 下一步
         });
         request.fail(function (jqXHR, textStatus, errorThrown){
